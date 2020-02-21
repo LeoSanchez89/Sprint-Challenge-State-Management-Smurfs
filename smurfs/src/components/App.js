@@ -5,6 +5,7 @@ import axios from "axios";
 import { SmurfContext } from "../contexts/SmurfContext";
 import SmurfForm from "./SmurfForm";
 import SmurfList from "./SmurfList";
+import pic from "../img/smurfs.png"; 
 
 import "./App.css";
 
@@ -25,7 +26,8 @@ const App = () => {
  
 	return (
 		<div className="App">
-			<h1>Look at all these SMURFS!</h1>
+			<h1>Look at all these <span className="smurfs">SMURFS!</span></h1>
+			<img src={pic}/>
 			<SmurfContext.Provider value={smurfs}>
 				<SmurfForm />
 				<SmurfList />

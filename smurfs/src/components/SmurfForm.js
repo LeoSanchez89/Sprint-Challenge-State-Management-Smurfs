@@ -1,6 +1,8 @@
 import React from "react";
 import axios from "axios";
 
+import { InputGroup, Input, Button, Form } from "reactstrap";
+
 const SmurfForm = () => {
 	const initialState = {
 		name: "",
@@ -33,16 +35,13 @@ const SmurfForm = () => {
 			});
 	};
 
-	axios.delete("https://jsonplaceholder.typicode.com/todos/").then(response => {
-		this.result.splice(id, 2);
-	});
-	console.log(this.result);
-
 	return (
-		<div>
+		<div className="form-container">
 			<h2>Add a Smurf</h2>
-			<form onSubmit={handleFormSubmit}>
-				<input
+			{/* <InputGroup> */}
+			<form className="smurf-form" onSubmit={handleFormSubmit}>
+				<Input
+					className="input-field"
 					type="text"
 					placeholder="Name"
 					value={data.name}
@@ -52,7 +51,8 @@ const SmurfForm = () => {
 					required
 				/>
 
-				<input
+				<Input
+					className="input-field"
 					type="text"
 					placeholder="Age"
 					value={data.age}
@@ -62,7 +62,8 @@ const SmurfForm = () => {
 					required
 				/>
 
-				<input
+				<Input
+					className="input-field"
 					type="text"
 					placeholder="Height (cm)"
 					value={data.height}
@@ -71,8 +72,11 @@ const SmurfForm = () => {
 					onChange={handleInputChange}
 					required
 				/>
-				<button type="submit">Submit</button>
+				<Button block inverse color="primary" type="submit">
+					Submit
+				</Button>
 			</form>
+			{/* </InputGroup> */}
 		</div>
 	);
 };
