@@ -20,7 +20,7 @@ const App = () => {
 				setSmurfs(res.data);
 			})
 			.catch(err => {
-				// console.log("error fetching from api", err);
+				console.log("error fetching from api", err);
 			});
 	}, []);
  

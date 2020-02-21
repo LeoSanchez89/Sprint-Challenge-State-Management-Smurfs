@@ -3,7 +3,7 @@ import axios from "axios";
 
 import { SmurfContext } from "../contexts/SmurfContext";
 
-import {  Input, Button } from "reactstrap";
+import { Input, Button } from "reactstrap";
 
 const SmurfForm = () => {
 
