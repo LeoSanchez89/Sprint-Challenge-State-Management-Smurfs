@@ -28,7 +28,7 @@ const App = () => {
 		<div className="App">
 			<h1>Look at all these <span className="smurfs">SMURFS!</span></h1>
 			<img src={pic}/>
-			<SmurfContext.Provider value={smurfs}>
+			<SmurfContext.Provider value={{smurfs, setSmurfs }}>
 				<SmurfForm />
 				<SmurfList />
 			</SmurfContext.Provider>

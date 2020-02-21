@@ -1,9 +1,14 @@
-import React from "react";
+import React, {useContext} from "react";
 import axios from "axios";
 
-import { InputGroup, Input, Button, Form } from "reactstrap";
+import { SmurfContext } from "../contexts/SmurfContext";
+
+import {  Input, Button } from "reactstrap";
 
 const SmurfForm = () => {
+
+	const { setSmurfs } = useContext(SmurfContext);
+
 	const initialState = {
 		name: "",
 		age: "",
@@ -20,7 +25,7 @@ const SmurfForm = () => {
 	};
 
 	const handleFormSubmit = event => {
-		// event.preventDefault();
+		event.preventDefault();
 		axios
 			.post("http://localhost:3333/smurfs", {
 				name: data.name,
@@ -28,11 +33,14 @@ const SmurfForm = () => {
 				height: data.height
 			})
 			.then(res => {
-				// console.log(res);
+				setSmurfs(res.data)
+				// console.log(res.data);
+				setData(initialState);
 			})
 			.catch(err => {
 				console.log("error posting data", err);
 			});
+		
 	};
 
 	return (

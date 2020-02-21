@@ -4,7 +4,7 @@ import { SmurfContext } from "../contexts/SmurfContext";
 import { Card, CardBody } from "reactstrap";
 
 const SmurfList = () => {
-	const smurfs = useContext(SmurfContext);
+	const { smurfs }  = useContext(SmurfContext);
 	// console.log(smurfs);
 	return (
 		<div className="smurf-container">
