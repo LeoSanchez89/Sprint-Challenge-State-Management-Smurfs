@@ -4,7 +4,7 @@ import { SmurfContext } from "../contexts/SmurfContext";
 const SmurfList = () => {
 
     const smurfs  = useContext(SmurfContext);
-    console.log(smurfs);
+    // console.log(smurfs);
     return (
         
         <div>
