@@ -23,6 +23,7 @@ div h1{
 }
 
 .smurf-card{
+  width:25%;
   max-width: 25%;
   margin: 2%;
 }
